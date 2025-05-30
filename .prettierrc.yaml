@@ -1,0 +1,16 @@
+arrowParens: "avoid"
+htmlWhitespaceSensitivity: "ignore"
+proseWrap: "always"
+bracketSameLine: true
+singleAttributePerLine: true
+useTabs: true
+semi: false
+# Svelte
+svelteSortOrder: "options-styles-scripts-markup"
+svelteStrictMode: false
+svelteIndentScriptAndStyle: true
+
+plugins:
+  - prettier-plugin-tailwindcss
+  - prettier-plugin-svelte
+  - prettier-plugin-astro

@@ -1,70 +1,71 @@
 ---
-import { type Props as SEOProps, SEO as AstroSEO } from "astro-seo";
+import { type Props as SEOProps, SEO as AstroSEO } from "astro-seo"
 
-const { props } = Astro;
+const { props } = Astro
 
 const metaData = {
-  title: props.title ?? "Welcome!",
-  titleTemplate: props.titleTemplate ?? "Incarnation Pinkmin - %s",
-  description:
-    props.description ?? "📱📖 A portfolio inspired by the Omniscient Reader's Viewpoint's System Window.",
-  // TODO: Add a default image
-  image: props.imageUrl ?? `/src/assets/adachi-media/wallpaper.jpg`,
-};
+	title: props.title ?? "ORV System Window",
+	titleTemplate: props.titleTemplate ?? "<Star Stream> [%s]",
+	description:
+		props.description ??
+		"📱📖 A portfolio inspired by the Omniscient Reader's Viewpoint's System Window.",
+	// TODO: Add a default image
+	image: props.imageUrl ?? `/src/assets/adachi-media/wallpaper.jpg`,
+}
 
 const defaultProps: SEOProps = {
-  extend: {
-    meta: [
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1.0",
-      }
-    ],
-    link: [
-      {
-        rel: "icon",
-        sizes: "32x32",
-        href: "/pinkmin_32x32.png",
-      },
-      {
-        rel: "icon",
-        sizes: "16x16",
-        href: "/pinkmin_16x16.png",
-      },
-      {
-        rel: "apple-touch-icon",
-        sizes: "180x180",
-        href: "/pinkmin-apple.png",
-      },
-      {
-        rel: "manifest",
-        href: "/pinkmin.webmanifest",
-      }
-    ],
-  },
-  title: metaData.title,
-  titleTemplate: metaData.titleTemplate,
-  titleDefault: metaData.title,
-  description: metaData.description,
-  openGraph: {
-    basic: {
-      image: metaData.image,
-      title: metaData.title,
-      type: props.type ?? "website",
-      ...props.openGraph?.basic,
-    },
-  },
-  twitter: {
-    title: metaData.title,
-    description: metaData.description,
-    creator: "@pinkmin",
-    card: "summary_large_image",
-    image: metaData.image,
-    imageAlt: metaData.title,
-  },
-};
+	extend: {
+		meta: [
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1.0",
+			},
+		],
+		link: [
+			{
+				rel: "icon",
+				sizes: "32x32",
+				href: "/pinkmin_32x32.png",
+			},
+			{
+				rel: "icon",
+				sizes: "16x16",
+				href: "/pinkmin_16x16.png",
+			},
+			{
+				rel: "apple-touch-icon",
+				sizes: "180x180",
+				href: "/pinkmin-apple.png",
+			},
+			{
+				rel: "manifest",
+				href: "/pinkmin.webmanifest",
+			},
+		],
+	},
+	title: metaData.title,
+	titleTemplate: metaData.titleTemplate,
+	titleDefault: metaData.title,
+	description: metaData.description,
+	openGraph: {
+		basic: {
+			image: metaData.image,
+			title: metaData.title,
+			type: props.type ?? "website",
+			...props.openGraph?.basic,
+		},
+	},
+	twitter: {
+		title: metaData.title,
+		description: metaData.description,
+		creator: "@pinkmin",
+		card: "summary_large_image",
+		image: metaData.image,
+		imageAlt: metaData.title,
+	},
+}
 
-const combinedProps = { ...defaultProps, ...props };
+const combinedProps = { ...defaultProps, ...props }
 ---
 
 <AstroSEO {...combinedProps} />

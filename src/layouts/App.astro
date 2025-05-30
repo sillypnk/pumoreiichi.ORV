@@ -1,28 +1,69 @@
 ---
-// I'd rather use this because clip-path is a pain to work with in CSS
-import "augmented-ui/augmented-ui.min.css";
-import "📱/styles/tailwind.css";
-import "📱/styles/animations.css";
-import SEO from "📱/components/SEO/SEO.astro";
-import Background from "📱/components/Background/bg.svelte";
-
-import { ClientRouter } from "astro:transitions";
-import { Font } from "astro:assets";
+// # Styles
+import "augmented-ui/augmented-ui.min.css"
+import "📱/styles/tailwind.css"
+import "📱/styles/animations.css"
+// # Components
+import SEO from "📱/components/SEO/SEO.astro"
+import BackgroundImage from "📱/components/BackgroundImage/bg.svelte"
+import WindowPanel from "📱/components/Window/window.svelte"
+import CaptionControls from "📱/components/Window/caption_controls.svelte"
+import { Icon } from "astro-icon/components"
+// # Astro
+import { ClientRouter } from "astro:transitions"
+import { Font } from "astro:assets"
 ---
 
-<html data-theme="Orv Window" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <ClientRouter />
-    <Font cssVariable="--font-orvconfig" preload />
-    <slot name="seo">
-      <SEO />
-    </slot>
-  </head>
+<html
+	data-theme="Orv Window"
+	lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<ClientRouter />
+		<Font
+			cssVariable="--font-orvconfig"
+			preload
+		/>
+		<slot name="seo">
+			<SEO />
+		</slot>
+	</head>
 
-  <body class="font-orv text-glow">
-    <Background client:only="svelte">
-      <slot />
-    </Background>
-  </body>
+	<body class="font-orv w-screen h-screen overflow-auto text-glow">
+		<BackgroundImage client:only="svelte">
+			<main class="grid place-content-center h-full">
+				<WindowPanel client:only="svelte">
+					<slot />
+					<Fragment slot="controls">
+						<CaptionControls>
+							<Icon
+								name="minimize"
+								class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
+								slot="minimize"
+							/>
+							<Icon
+								name="restore_down"
+								class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
+								slot="restore_down"
+							/>
+							<Icon
+								name="close"
+								class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
+								slot="close"
+							/>
+						</CaptionControls>
+					</Fragment>
+				</WindowPanel>
+			</main>
+
+			<!-- Footer and other stuff -->
+			<div class="absolute right-1 bottom-1 text-xs text-right">
+				<span>[Version 1.0]</span>
+				<footer>
+					© {new Date().getFullYear()}
+					<a href="/">Pinkmin™</a>. All Rights Reserved.
+				</footer>
+			</div>
+		</BackgroundImage>
+	</body>
 </html>

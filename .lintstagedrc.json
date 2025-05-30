@@ -1,0 +1,3 @@
+{
+  "src/**/*.{js,ts,astro,svelte}": "npm run lint:fix"
+}
