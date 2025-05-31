@@ -1,6 +1,5 @@
 /.github
 /.husky
-/build
 /public
 /node_modules
 /dist

@@ -29,13 +29,11 @@ export default ts.config([
 	{
 		ignores: [
 			"package-lock.json",
-			"package.json",
 			".gitignore",
 			".github",
 			"**/.vscode",
 			"**/.husky",
 			"**/.astro",
-			"**/build",
 			"**/public",
 			"**/node_modules",
 			"**/dist",
