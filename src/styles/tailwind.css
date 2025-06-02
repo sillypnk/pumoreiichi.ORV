@@ -5,68 +5,85 @@
 
 /* Tailwind Base */
 @theme {
-	--font-orv: var(--font-orvconfig);
-	--animate-typewriter:
-		typewriter 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  --font-orv: var(--font-orvconfig);
+  --animate-typewriter:
+    typewriter 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@layer utilities {
+  .no-scrollbar::webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+  }
 }
 
 @layer components {
-	.text-glow {
-		text-shadow:
-			0 0 10px rgba(249, 253, 254, 0.5),
-			0 0 10px #3ecfff;
-	}
+  .text-glow {
+    text-shadow:
+      0 0 10px rgba(249, 253, 254, 0.5),
+      0 0 10px #3ecfff;
+  }
 
-	.slanted-edge-left {
-		aspect-ratio: 1;
-		clip-path: polygon(var(--p) 0, 100% 0, 100% 100%, 0 100%);
-	}
+  .glassmorphism {
+    background-clip: padding-box;
+    backdrop-filter: blur(4px) saturate(100%) contrast(100%);
+  }
 
-	.slanted-edge-right {
-		aspect-ratio: 1;
-		clip-path: polygon(0 0, calc(100% - var(--p)) 0, 100% 100%, 0 100%);
-	}
+  .slanted-edge-left {
+    --p: 70px;
+    clip-path: polygon(var(--p) 0, 100% 0, 100% 100%, 0 100%);
+  }
 
-	.top-left-corner {
-		position: absolute;
-		top: 0;
-		left: 0;
-		border-top: 2px solid var(--color-base-content);
-		border-left: 2px solid var(--color-base-content);
-	}
+  .slanted-edge-right {
+    --p: 70px;
+    clip-path: polygon(0 0, calc(100% - var(--p)) 0, 100% 100%, 0 100%);
+  }
 
-	.bottom-right-corner {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		border-bottom: 2px solid var(--color-base-content);
-		border-right: 2px solid var(--color-base-content);
-	}
+  .top-left-corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--color-base-content);
+    border-left: 2px solid var(--color-base-content);
+  }
+
+  .bottom-right-corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--color-base-content);
+    border-right: 2px solid var(--color-base-content);
+  }
 }
 
 /* DaisyUI */
 @plugin "daisyui" {
-	themes: "Orv Window";
-	logs: false;
+  themes: "Orv Window";
+  logs: false;
 }
 
 @plugin "daisyui/theme" {
-	name: "Orv Window";
-	default: true;
-	prefersdark: true;
-	color-scheme: "dark";
-	--color-base-100: oklch(20% 0.042 265.755);
-	--color-base-200: oklch(0.6902 0.1651 250.99);
-	--color-base-300: oklch(0.5926 0.1073 252.36);
-	--color-base-content: oklch(0.9913 0.0044 214.33);
-	--color-primary: oklch(0.9913 0.0044 214.33);
-	--color-primary-content: oklch(0.5926 0.1073 252.36);
-	--radius-selector: 0rem;
-	--radius-field: 0.5rem;
-	--radius-box: 0.5rem;
-	--size-selector: 0.3125rem;
-	--size-field: 0.3125rem;
-	--border: 1px;
+  name: "Orv Window";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(20% 0.042 265.755);
+  --color-base-200: oklch(0.6902 0.1651 250.99);
+  --color-base-300: oklch(0.5926 0.1073 252.36);
+  --color-base-content: oklch(0.9913 0.0044 214.33);
+  --color-primary: oklch(0.9913 0.0044 214.33);
+  --color-primary-content: oklch(0.5926 0.1073 252.36);
+  --radius-selector: 0rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.3125rem;
+  --size-field: 0.3125rem;
+  --border: 1px;
 }
 
 /* ------------------------------------------------------------------------ */

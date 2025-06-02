@@ -14,68 +14,69 @@ import svelteConfig from "./svelte.config.js"
 
 /** @type {import('typescript-eslint').Config} */
 export default ts.config([
-	js.configs.recommended,
-	...ts.configs.recommendedTypeChecked,
-	...svelte.configs["flat/recommended"],
-	...astro.configs["flat/recommended"],
-	{
-		extends: [ts.configs.disableTypeChecked],
-	},
-	{
-		rules: {
-			"@typescript-eslint/no-explicit-any": "warn",
-		},
-	},
-	{
-		ignores: [
-			"package-lock.json",
-			".gitignore",
-			".github",
-			"**/.vscode",
-			"**/.husky",
-			"**/.astro",
-			"**/public",
-			"**/node_modules",
-			"**/dist",
-		],
-	},
-	{
-		languageOptions: {
-			parserOptions: {
-				projectService: true,
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
-	},
-	// Astro
-	{
-		files: ["**/*.astro", "*.astro"],
-		languageOptions: {
-			ecmaVersion: "latest",
-			sourceType: "module",
-			globals: { ...globals.browser },
-			parser: astroParser,
-			parserOptions: {
-				parser: ts.parser,
-				extraFileExtensions: [".astro"],
-			},
-		},
-	},
-	// Svelte
-	{
-		files: ["**/*.svelte", "*.svelte"],
-		languageOptions: {
-			ecmaVersion: "latest",
-			sourceType: "module",
-			globals: { ...globals.browser },
-			parser: svelteParser,
-			parserOptions: {
-				parser: ts.parser,
-				extraFileExtensions: [".svelte"],
+  js.configs.recommended,
+  ...ts.configs.recommendedTypeChecked,
+  ...svelte.configs["flat/recommended"],
+  ...astro.configs["flat/recommended"],
+  {
+    extends: [ts.configs.disableTypeChecked],
+  },
+  {
+    rules: {
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
+    },
+  },
+  {
+    ignores: [
+      "package-lock.json",
+      ".gitignore",
+      ".github",
+      "**/.vscode",
+      "**/.husky",
+      "**/.astro",
+      "**/public",
+      "**/node_modules",
+      "**/dist",
+    ],
+  },
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  // Astro
+  {
+    files: ["**/*.astro", "*.astro"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: { ...globals.browser },
+      parser: astroParser,
+      parserOptions: {
+        parser: ts.parser,
+        extraFileExtensions: [".astro"],
+      },
+    },
+  },
+  // Svelte
+  {
+    files: ["**/*.svelte", "*.svelte"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: { ...globals.browser },
+      parser: svelteParser,
+      parserOptions: {
+        parser: ts.parser,
+        extraFileExtensions: [".svelte"],
 
-				// Svelte Config
-				svelteConfig,
-			},
-		},
-	},
+        // Svelte Config
+        svelteConfig,
+      },
+    },
+  },
 ])

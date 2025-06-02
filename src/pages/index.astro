@@ -8,289 +8,289 @@ import SEO from "📱/components/SEO/SEO.astro"
 ---
 
 <ORVApp>
-	<SEO
-		title="Main Window: Incarnation Details"
-		slot="seo"
-	/>
+  <SEO
+    title="Main Window: Incarnation Details"
+    slot="seo"
+  />
 
-	<div class="flex flex-row w-full">
-		<!-- [[ INCARNATION DETAILS HEADER ]] -->
-		<div class="flex flex-col h-full pr-7">
-			<div
-				class="py-4 w-md mr-10 bg-blue-400 mb-6 ml-2 inset-shadow-[10px_10px_40px_10px_var(--color-cyan-300)]"
-				style="--aug-border-all: 1px; --aug-tl: 2em;"
-				data-augmented-ui="tl-clip border">
-				<h1 class="text-[40px] text-center tracking-[0.100em]">
-					INCARNATION DETAILS
-				</h1>
-			</div>
+  <div class="flex w-full flex-row">
+    <!-- [[ INCARNATION DETAILS HEADER ]] -->
+    <div class="flex h-full flex-col pr-7">
+      <div
+        class="mr-10 mb-6 ml-2 w-md bg-blue-400 py-4 inset-shadow-[10px_10px_40px_10px_var(--color-cyan-300)]"
+        style="--aug-border-all: 1px; --aug-tl: 2em;"
+        data-augmented-ui="tl-clip border">
+        <h1 class="text-center text-[40px] tracking-[0.100em]">
+          INCARNATION DETAILS
+        </h1>
+      </div>
 
-			<!-- -> [[ INCARNATION DETAILS ]]: NAME -->
-			<section class="ml-6 flex items-center gap-1">
-				<h3 class="text-2xl">NAME:</h3>
-				<div class="bg-blue-400 w-full max-w-[230px] min-h-[33px] rounded-none">
-					<span class="text-md text-center pl-2 inline-block mt-1.5">
-						James Alvin Pendon
-					</span>
-				</div>
-				<div
-					class="bg-blue-400 relative ml-10 w-[100px] h-full min-h-[33px] rounded-none">
-					<span class="text-md ml-2 mt-1.5 text-center inline-block">
-						He/Him
-					</span>
-					<div
-						class="bg-blue-300 absolute right-0 w-2 h-full px-2.5 inline-block">
-						<span class="absolute bottom-0.5 right-1 text-xs">▼</span>
-					</div>
-				</div>
-			</section>
+      <!-- -> [[ INCARNATION DETAILS ]]: NAME -->
+      <section class="ml-6 flex items-center gap-1">
+        <h3 class="text-2xl">NAME:</h3>
+        <div class="min-h-[33px] w-full max-w-[230px] rounded-none bg-blue-400">
+          <span class="text-md mt-1.5 inline-block pl-2 text-center">
+            James Alvin Pendon
+          </span>
+        </div>
+        <div
+          class="relative ml-10 h-full min-h-[33px] w-[100px] rounded-none bg-blue-400">
+          <span class="text-md mt-1.5 ml-2 inline-block text-center">
+            He/Him
+          </span>
+          <div
+            class="absolute right-0 inline-block h-full w-2 bg-blue-300 px-2.5">
+            <span class="absolute right-1 bottom-0.5 text-xs">▼</span>
+          </div>
+        </div>
+      </section>
 
-			<!-- -> [[ INCARNATION DETAILS ]]: AGE -->
-			<section class="ml-[40px] mt-6 flex items-center">
-				<h3 class="text-2xl mr-8">AGE:</h3>
-				<input
-					type="checkbox"
-					class="checkbox pointer-events-none checkbox-xs border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10 rounded-none"
-				/>
-				<span class="text-lg ml-[6px] mr-8">18 ↑</span>
+      <!-- -> [[ INCARNATION DETAILS ]]: AGE -->
+      <section class="mt-6 ml-[40px] flex items-center">
+        <h3 class="mr-8 text-2xl">AGE:</h3>
+        <input
+          type="checkbox"
+          class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none rounded-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+        />
+        <span class="mr-8 ml-[6px] text-lg">18 ↑</span>
 
-				<input
-					type="checkbox"
-					checked
-					class="checkbox pointer-events-none checkbox-xs border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10 rounded-none"
-				/>
-				<span class="text-lg ml-[6px] mr-5">18 ↓</span>
+        <input
+          type="checkbox"
+          checked
+          class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none rounded-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+        />
+        <span class="mr-5 ml-[6px] text-lg">18 ↓</span>
 
-				<input
-					type="checkbox"
-					class="checkbox pointer-events-none checkbox-xs border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10 rounded-none"
-				/>
-				<span class="uppercase text-sm ml-[7px]">
-					undiscl<span class="text-md mx-[2px]">■</span>se<span
-						class="text-md ml-[2px]">
-						■
-					</span>
-				</span>
-			</section>
+        <input
+          type="checkbox"
+          class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none rounded-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+        />
+        <span class="ml-[7px] text-sm uppercase">
+          undiscl<span class="text-md mx-[2px]">■</span>se<span
+            class="text-md ml-[2px]">
+            ■
+          </span>
+        </span>
+      </section>
 
-			<section class="text-center mt-6">
-				<a
-					href="#about"
-					class="text-sm hover:link">
-					👤 Know more about me!
-				</a>
-			</section>
+      <section class="mt-6 text-center">
+        <a
+          href="#about"
+          class="hover:link text-sm">
+          👤 Know more about me!
+        </a>
+      </section>
 
-			<hr
-				class="mt-7 mb-11 shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content inset-shadow-base-content w-[28rem] ml-6"
-			/>
+      <hr
+        class="shadow-base-content inset-shadow-base-content mt-7 mb-11 ml-6 w-[28rem] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+      />
 
-			<!-- -> [[ INCARNATION DETAILS ]]: CONSTELLATION SPONSOR -->
-			<section
-				class="ml-6 grid grid-rows-[34px_45px_95px_20px_auto] grid-cols-[325px_117px]">
-				<div class="col-start-1 row-end-2">
-					<h3 class="text-2xl mb-2">CONSTELLATION SPONSOR:</h3>
-					<div class="w-[295px] h-[33px] bg-blue-400 rounded-none">
-						<span class="ml-2 block pt-1">The Quiet Hare</span>
-					</div>
-				</div>
+      <!-- -> [[ INCARNATION DETAILS ]]: CONSTELLATION SPONSOR -->
+      <section
+        class="ml-6 grid grid-cols-[325px_117px] grid-rows-[34px_45px_95px_20px_auto]">
+        <div class="col-start-1 row-end-2">
+          <h3 class="mb-2 text-2xl">CONSTELLATION SPONSOR:</h3>
+          <div class="h-[33px] w-[295px] rounded-none bg-blue-400">
+            <span class="ml-2 block pt-1">The Quiet Hare</span>
+          </div>
+        </div>
 
-				<!-- -> [[ INCARNATION DETAILS ]]: EXCLUSIVE ATTRIBUTES -->
-				<div class="col-start-1 row-start-3">
-					<h3 class="text-2xl mb-2">EXCLUSIVE ATTRIBUTES:</h3>
-					<div
-						class="relative w-[295px] h-[55px] block bg-blue-400 rounded-none">
-						<div class="top-left-corner size-2"></div>
-						<div class="bottom-right-corner size-2"></div>
-						<span class="ml-2">None.</span>
-					</div>
-					<span class="block -my-0.5 text-sm cursor-pointer">
-						[EXPAND LIST]
-					</span>
-				</div>
+        <!-- -> [[ INCARNATION DETAILS ]]: EXCLUSIVE ATTRIBUTES -->
+        <div class="col-start-1 row-start-3">
+          <h3 class="mb-2 text-2xl">EXCLUSIVE ATTRIBUTES:</h3>
+          <div
+            class="relative block h-[55px] w-[295px] rounded-none bg-blue-400">
+            <div class="top-left-corner size-2"></div>
+            <div class="bottom-right-corner size-2"></div>
+            <span class="ml-2">None.</span>
+          </div>
+          <span class="-my-0.5 block cursor-pointer text-sm">
+            [EXPAND LIST]
+          </span>
+        </div>
 
-				<!-- -> [[ INCARNATION DETAILS ]]: ADDITIONAL NOTES -->
-				<span class="text-[12px] ml-0.5 place-content-end">
-					ADDITIONAL NOTES:
-				</span>
-				<div class="col-start-2 row-start-2 row-end-4">
-					<div class="w-full h-full overflow-y-scroll bg-blue-400 p-1">
-						<span class="text-sm">
-							🌟 Is timid, very shy, quiet but sometimes talkative when with
-							friends :&gt; 🔴 Can be really negative about himself, you know
-							cause real-life stuff.
-						</span>
-					</div>
-					<div class="text-[12px] mb-5 text-right cursor-pointer">
-						[EXPAND LIST]
-					</div>
-				</div>
+        <!-- -> [[ INCARNATION DETAILS ]]: ADDITIONAL NOTES -->
+        <span class="ml-0.5 place-content-end text-[12px]">
+          ADDITIONAL NOTES:
+        </span>
+        <div class="col-start-2 row-start-2 row-end-4">
+          <div class="h-full w-full overflow-y-scroll bg-blue-400 p-1">
+            <span class="text-sm">
+              🌟 Is timid, very shy, quiet but sometimes talkative when with
+              friends :&gt; 🔴 Can be really negative about himself, you know
+              cause real-life stuff.
+            </span>
+          </div>
+          <div class="mb-5 cursor-pointer text-right text-[12px]">
+            [EXPAND LIST]
+          </div>
+        </div>
 
-				<!-- -> [[ INCARNATION DETAILS ]]: I have no idea what this is -->
-				<div class="row-start-5 row-end-6 col-start-1 col-end-3">
-					<div class="flex flex-row gap-7 mt-9 text-2xl">
-						<div>
-							<input
-								type="checkbox"
-								class="checkbox checkbox-xs pointer-events-none border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-							/>
-							<span class="inline-block">RT</span>
-						</div>
-						<div>
-							<input
-								type="checkbox"
-								class="checkbox checkbox-xs pointer-events-none border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-							/>
-							<span class="inline-block">QRT</span>
-						</div>
-						<div>
-							<input
-								type="checkbox"
-								class="checkbox checkbox-xs pointer-events-none border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-							/>
-							<span class="inline-block">PQRT</span>
-						</div>
+        <!-- -> [[ INCARNATION DETAILS ]]: I have no idea what this is -->
+        <div class="col-start-1 col-end-3 row-start-5 row-end-6">
+          <div class="mt-9 flex flex-row gap-7 text-2xl">
+            <div>
+              <input
+                type="checkbox"
+                class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+              />
+              <span class="inline-block">RT</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+              />
+              <span class="inline-block">QRT</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+              />
+              <span class="inline-block">PQRT</span>
+            </div>
 
-						<div class="ml-3 text-lg">
-							<span class="mr-3">FILTER<span class="text-xs">■</span>NG:</span>
-							<span class="cursor-pointer">
-								ON │ <span class="underline underline-offset-3">OFF</span>
-							</span>
-							<div class="text-[12px] -mt-2">(for no reason)</div>
-						</div>
-					</div>
-					<div class="text-xs -mt-2">(I do not know any of these)</div>
-				</div>
-			</section>
-		</div>
+            <div class="ml-3 text-lg">
+              <span class="mr-3">FILTER<span class="text-xs">■</span>NG:</span>
+              <span class="cursor-pointer">
+                ON │ <span class="underline underline-offset-3">OFF</span>
+              </span>
+              <div class="-mt-2 text-[12px]">(for no reason)</div>
+            </div>
+          </div>
+          <div class="-mt-2 text-xs">(I do not know any of these)</div>
+        </div>
+      </section>
+    </div>
 
-		<!-- 2nd Page -->
-		<div class="w-full">
-			<!-- -> [[ INCARNATION DETAILS ]]: AVATAR -->
-			<section
-				class="max-w-[299px] min-h-[300px] relative overflow-none bg-blue-400 inset-shadow-[10px_10px_55px_5px_var(--color-cyan-300)]">
-				<Image
+    <!-- 2nd Page -->
+    <div class="w-full">
+      <!-- -> [[ INCARNATION DETAILS ]]: AVATAR -->
+      <section
+        class="overflow-none relative min-h-[300px] max-w-[299px] bg-blue-400 inset-shadow-[10px_10px_55px_5px_var(--color-cyan-300)]">
+        <Image
 					class="opacity-70 h-full w-full object-cover absolute"
 					src={AvatarImage}
 					alt="Image Avatar"
 					slot="avatar"
 				/>
-				<!-- <div class="flex justify-center items-center h-full"> <span class="text-2xl">[NO IMAGE AVAILABLE]</span> </div> -->
-			</section>
-			<span class="block cursor-pointer text-md">[EXPAND THUMBNAIL IMAGE]</span>
-			<hr
-				class="mb-7 mt-2.5 shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content inset-shadow-base-content w-[60px]"
-			/>
+        <!-- <div class="flex justify-center items-center h-full"> <span class="text-2xl">[NO IMAGE AVAILABLE]</span> </div> -->
+      </section>
+      <span class="text-md block cursor-pointer">[EXPAND THUMBNAIL IMAGE]</span>
+      <hr
+        class="shadow-base-content inset-shadow-base-content mt-2.5 mb-7 w-[60px] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+      />
 
-			<!-- -> [[ INCARNATION DETAILS ]]: RADAR CHART STATISTICS -->
-			<section class="absolute top-14 right-9">
-				<h2 class="text-3xl">STATS:</h2>
-				<hr
-					class="w-[1.6em] mb-3 shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content inset-shadow-base-content"
-				/>
-				<div class="relative">
-					<div class="top-left-corner size-2"></div>
-					<StatsChart client:only="svelte" />
-					<div class="text-right underline text-sm -mt-6 mr-9">Laziness</div>
-					<div class="bottom-right-corner size-2"></div>
-				</div>
-				<h4 class="text-md text-right mt-1 cursor-pointer">
-					[EXPAND STATISTICS]
-				</h4>
-			</section>
+      <!-- -> [[ INCARNATION DETAILS ]]: RADAR CHART STATISTICS -->
+      <section class="absolute top-14 right-9 portrait:right-4">
+        <h2 class="text-3xl">STATS:</h2>
+        <hr
+          class="shadow-base-content inset-shadow-base-content mb-3 w-[1.6em] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+        />
+        <div class="relative">
+          <div class="top-left-corner size-2"></div>
+          <StatsChart client:only="svelte" />
+          <div class="-mt-6 mr-9 text-right text-sm underline">Laziness</div>
+          <div class="bottom-right-corner size-2"></div>
+        </div>
+        <h4 class="text-md mt-1 cursor-pointer text-right">
+          [EXPAND STATISTICS]
+        </h4>
+      </section>
 
-			<!-- -> [[ INCARNATION DETAILS ]]: COMPREHENSIVE EVALUATION -->
-			<section>
-				<h3 class="text-2xl">COMPREHENSIVE EVALUATION</h3>
-				<hr
-					class="mb-5 mt-0.5 shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content inset-shadow-base-content w-[34px]"
-				/>
+      <!-- -> [[ INCARNATION DETAILS ]]: COMPREHENSIVE EVALUATION -->
+      <section>
+        <h3 class="text-2xl">COMPREHENSIVE EVALUATION</h3>
+        <hr
+          class="shadow-base-content inset-shadow-base-content mt-0.5 mb-5 w-[34px] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+        />
 
-				<div class="text-md flex flex-row items-center mb-4">
-					<h4 class="mr-6">ROLE:</h4>
-					<input
-						type="checkbox"
-						style="--size: 15px;"
-						class="checkbox pointer-events-none checkbox-xs border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-						checked
-					/>
-					<span class="mr-2">DPS(FRONTEND DEV)</span>
+        <div class="text-md mb-4 flex flex-row items-center">
+          <h4 class="mr-6">ROLE:</h4>
+          <input
+            type="checkbox"
+            style="--size: 15px;"
+            class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+            checked
+          />
+          <span class="mr-2">DPS(DEVELOPER)</span>
 
-					<input
-						type="checkbox"
-						style="--size: 15px;"
-						class="checkbox pointer-events-none checkbox-xs border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-						checked
-					/>
-					<span class="mr-2">TANKER(ARTIST)</span>
+          <input
+            type="checkbox"
+            style="--size: 15px;"
+            class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+            checked
+          />
+          <span class="mr-2">TANKER(ARTIST)</span>
 
-					<input
-						type="checkbox"
-						style="--size: 15px;"
-						class="checkbox pointer-events-none border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-					/>
-					<span class="mr-2">SUPPORT(PROMOTER??)</span>
+          <input
+            type="checkbox"
+            style="--size: 15px;"
+            class="checkbox border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+          />
+          <span class="mr-2">SUPPORT(PROMOTER)</span>
 
-					<input
-						type="checkbox"
-						style="--size: 15px;"
-						class="checkbox pointer-events-none border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-						checked
-					/>
-					<span class="mr-2">ALL-ROUNDER(MISC)</span>
-				</div>
+          <input
+            type="checkbox"
+            style="--size: 15px;"
+            class="checkbox border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+            checked
+          />
+          <span class="mr-2">ALL-ROUNDER(MISC)</span>
+        </div>
 
-				<div class="text-md flex flex-row items-center mb-2">
-					<h4 class="mr-11">STREAM RATING:</h4>
-					<input
-						type="checkbox"
-						class="checkbox checkbox-xs pointer-events-none border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-					/>
-					<span class="mr-12 text-lg">NSFW</span>
+        <div class="text-md mb-2 flex flex-row items-center">
+          <h4 class="mr-11">STREAM RATING:</h4>
+          <input
+            type="checkbox"
+            class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+          />
+          <span class="mr-12 text-lg">NSFW</span>
 
-					<input
-						type="checkbox"
-						checked
-						class="checkbox pointer-events-none checkbox-xs border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-					/>
-					<span class="mr-12 text-lg">SFW</span>
+          <input
+            type="checkbox"
+            checked
+            class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+          />
+          <span class="mr-12 text-lg">SFW</span>
 
-					<input
-						type="checkbox"
-						class="checkbox pointer-events-none checkbox-xs border-base-content/70 border shadow-[0_0_10px] inset-shadow-[0_0_10px] shadow-base-content/50 inset-shadow-base-content/10"
-					/>
-					<span class="mr-12 text-lg">
-						OTHER_________________________________________________________
-					</span>
-				</div>
+          <input
+            type="checkbox"
+            class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+          />
+          <span class="mr-12 text-lg">
+            OTHER_________________________________________________________
+          </span>
+        </div>
 
-				<div class="text-md flex flex-row">
-					<h4 class="mr-6">
-						STREAM TAGS:<br />
-						<div class="text-xs -mt-1">(SHIPS, FAV TROPES, MISC)</div>
-					</h4>
-					<div
-						class="w-full max-w-[360px] h-full max-h-[38px] bg-blue-400 mb-2 rounded-none overflow-auto">
-						<p class="ml-1 whitespace-nowrap">
-							|Cute|, |Wholesome|, |Reader X Author|, |Romance (Obviously)|,
-							|Action|, |Isekai/Regression|, |Yuri/Gl|
-						</p>
-					</div>
-				</div>
-				<div class="text-md flex flex-row">
-					<h4 class="mr-5 -mt-2">
-						BANNED KEYWORDS:<br />
-						<div class="text-xs -mt-1">(UNLIKED TAGS)</div>
-					</h4>
-					<div
-						class="w-full max-w-[361px] h-full max-h-[38px] bg-blue-400 rounded-none overflow-auto">
-						<p class="ml-1 whitespace-nowrap">
-							|Self-hatred|, |Dumass MCs|, |not straightforward|,
-							|Unpassionate|, |Hypocrite|
-						</p>
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
+        <div class="text-md flex flex-row">
+          <h4 class="mr-6">
+            STREAM TAGS:<br />
+            <div class="-mt-1 text-xs">(SHIPS, FAV TROPES, MISC)</div>
+          </h4>
+          <div
+            class="mb-4 h-full max-h-[38px] w-full max-w-[360px] overflow-auto rounded-none no-scrollbar bg-blue-400">
+            <p class="ml-1 whitespace-nowrap">
+              |Cute|, |Wholesome|, |Reader X Author|, |Romance (Obviously)|,
+              |Action|, |Isekai/Regression|, |Yuri/Gl|
+            </p>
+          </div>
+        </div>
+        <div class="text-md flex flex-row">
+          <h4 class="-mt-2 mr-5">
+            BANNED KEYWORDS:<br />
+            <div class="-mt-1 text-xs">(UNLIKED TAGS)</div>
+          </h4>
+          <div
+            class="h-full max-h-[38px] w-full max-w-[361px] overflow-auto rounded-none no-scrollbar bg-blue-400">
+            <p class="ml-1 whitespace-nowrap">
+              |Self-hatred|, |Dumass MCs|, |not straightforward|,
+              |Unpassionate|, |Hypocrite|
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </ORVApp>

@@ -5,16 +5,15 @@ bracketSameLine: true
 singleAttributePerLine: true
 useTabs: false
 semi: false
- 
+
 # Svelte
 svelteSortOrder: "options-styles-scripts-markup"
 svelteStrictMode: false
 svelteIndentScriptAndStyle: true
 svelteAllowShorthand: true
- 
+
 # Astro
 astroAllowShorthand: true
-
 
 plugins:
   - prettier-plugin-svelte

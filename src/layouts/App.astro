@@ -6,8 +6,8 @@ import "📱/styles/animations.css"
 // # Components
 import SEO from "📱/components/SEO/SEO.astro"
 import BackgroundImage from "📱/components/BackgroundImage/bg.svelte"
-import WindowPanel from "📱/components/Window/window.svelte"
 import CaptionControls from "📱/components/Window/caption_controls.svelte"
+import WindowPanel from "📱/components/Window/window.svelte"
 import { Icon } from "astro-icon/components"
 // # Astro
 import { ClientRouter } from "astro:transitions"
@@ -15,55 +15,55 @@ import { Font } from "astro:assets"
 ---
 
 <html
-	data-theme="Orv Window"
-	lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<ClientRouter />
-		<Font
-			cssVariable="--font-orvconfig"
-			preload
-		/>
-		<slot name="seo">
-			<SEO />
-		</slot>
-	</head>
+  data-theme="Orv Window"
+  lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <ClientRouter />
+    <Font
+      cssVariable="--font-orvconfig"
+      preload
+    />
+    <slot name="seo">
+      <SEO />
+    </slot>
+  </head>
 
-	<body class="font-orv w-screen h-screen overflow-auto text-glow">
-		<BackgroundImage client:only="svelte">
-			<main class="grid place-content-center h-full">
-				<WindowPanel client:only="svelte">
-					<slot />
-					<Fragment slot="controls">
-						<CaptionControls>
-							<Icon
-								name="minimize"
-								class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
-								slot="minimize"
-							/>
-							<Icon
-								name="restore_down"
-								class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
-								slot="restore_down"
-							/>
-							<Icon
-								name="close"
-								class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
-								slot="close"
-							/>
-						</CaptionControls>
-					</Fragment>
-				</WindowPanel>
-			</main>
+  <body class="font-orv text-glow h-screen w-screen overflow-auto ">
+    <BackgroundImage client:only="svelte">
+      <main class="grid h-full place-content-center">
+        <WindowPanel client:only="svelte">
+          <slot />
+          <Fragment slot="controls">
+            <CaptionControls>
+              <Icon
+                name="minimize"
+                class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
+                slot="minimize"
+              />
+              <Icon
+                name="restore_down"
+                class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
+                slot="restore_down"
+              />
+              <Icon
+                name="close"
+                class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
+                slot="close"
+              />
+            </CaptionControls>
+          </Fragment>
+        </WindowPanel>
+      </main>
 
-			<!-- Footer and other stuff -->
-			<div class="absolute right-1 bottom-1 text-xs text-right">
-				<span>[Version 1.0]</span>
-				<footer>
-					© {new Date().getFullYear()}
-					<a href="/">Pinkmin™</a>. All Rights Reserved.
-				</footer>
-			</div>
-		</BackgroundImage>
-	</body>
+      <!-- Footer and other stuff -->
+      <div class="absolute right-1 bottom-1 portrait:left-1 portrait:top-1 text-right text-xs lg:text-sm portrait:rotate-90">
+        <span>[Version 1.0]</span>
+        <footer>
+          © {new Date().getFullYear()}
+          <a class="link" href="https://github.com/sillypnk/reiichi.ORV" target="_blank">PumoReichii™</a>. All Rights Reserved.
+        </footer>
+      </div>
+    </BackgroundImage>
+  </body>
 </html>
