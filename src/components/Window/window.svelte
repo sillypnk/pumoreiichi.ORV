@@ -2,7 +2,8 @@
   import { onMount, type Snippet } from "svelte"
   import AugmentedUI from "../AugmentedUI/augmented-ui.svelte"
   import { createTimeline, stagger } from "animejs"
-  import { Howl } from "howler"
+  import { Howl } from "howler";
+  import WindowAppearAudio from "📱/assets/audios/orvwindow-appear01.wav";
 
   type WindowProps = {
     /**
@@ -54,7 +55,8 @@
           ease: "cubicBezier(1, 0, 0, 1)",
           onBegin: () => {
             new Howl({
-              src: "/src/assets/audios/orvwindow-appear01.wav",
+              autoplay: true,
+              src: WindowAppearAudio,
               preload: true,
             }).play()
           },
@@ -75,7 +77,7 @@
 
 <!-- Window wrapper (For window cut borders) -->
 <div
-  class={`relative min-h-[${h}] window-appearance window-open max-w-8 scale-[95%] lg:overflow-hidden portrait:scale-[65%] portrait:rotate-90`}>
+  class={`relative min-h-[${h}] window-appearance window-open max-w-8 scale-[95%] lg:overflow-hidden portrait:scale-[48%] portrait:rotate-90`}>
   <!-- Top left border -->
   <div class="absolute top-2 -left-4 rotate-[315deg]">
     <div class="flex items-center">
@@ -92,7 +94,7 @@
   </div>
   <!-- Main Window -->
   <AugmentedUI
-    class="glassmorphism bg-blue-500/60 p-1"
+    class="glassmorphism bg-blue-500/60 p-1 overflow-hidden"
     style="--aug-tr: 1.5em; --aug-bl: 1.5em; --aug-br: 3.5em; --aug-tl: 2.9em;"
     options={{
       tl: "clip",
@@ -112,7 +114,7 @@
         bl: "clip",
       }}>
       <AugmentedUI
-        class="relative h-full w-full overflow-auto"
+        class="relative h-full w-full"
         style="--aug-border-all: 2px; --aug-tr: 1.5em; --aug-bl: 1.5em; --aug-br: 3.5em; --aug-tl: 2.9em;"
         border
         options={{
