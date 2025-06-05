@@ -16,8 +16,8 @@ import svelteConfig from "./svelte.config.js"
 export default ts.config([
   js.configs.recommended,
   ...ts.configs.recommendedTypeChecked,
-  ...svelte.configs["flat/recommended"],
-  ...astro.configs["flat/recommended"],
+  ...svelte.configs.recommended,
+  ...astro.configs.recommended,
   {
     extends: [ts.configs.disableTypeChecked],
   },
@@ -39,14 +39,6 @@ export default ts.config([
       "**/node_modules",
       "**/dist",
     ],
-  },
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
   },
   // Astro
   {
@@ -71,6 +63,8 @@ export default ts.config([
       globals: { ...globals.browser },
       parser: svelteParser,
       parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
         parser: ts.parser,
         extraFileExtensions: [".svelte"],
 
