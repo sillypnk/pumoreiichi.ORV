@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "lint-staged": {
-    "src/**/*.{js,ts,astro,svelte}": "npm run format && npm run lint"
+    "*.{js,astro,ts,svelte}": "eslint --fix"
   },
   "scripts": {
     "dev": "astro dev --silent --open",
