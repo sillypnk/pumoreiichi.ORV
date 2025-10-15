@@ -3,7 +3,13 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "strict": true,
+    "noErrorTruncation": true,
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true,
     "allowJs": true,
     "baseUrl": ".",
     "paths": {

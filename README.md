@@ -35,6 +35,10 @@ To learn more about the folder structure of an Astro project, refer to
 
 All commands are run from the root of the project, from a terminal:
 
+<div align="center">
+	<h1>Uh huh</h1>
+</div>
+
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |

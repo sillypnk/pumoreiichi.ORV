@@ -1,27 +1,30 @@
 ---
-// # Styles
-import "augmented-ui/augmented-ui.min.css"
+// # 💄 Styles
+import "augmented-ui/aug-core.min.css"
+import "augmented-ui/border-inlay-mixins.min.css"
+import "augmented-ui/region-mixins.min.css"
 import "📱/styles/tailwind.css"
-import "📱/styles/animations.css"
-// # Components
+// # ♻ Components
 import SEO from "📱/components/SEO/SEO.astro"
-import BackgroundImage from "📱/components/BackgroundImage/bg.svelte"
 import CaptionControls from "📱/components/Window/caption_controls.svelte"
+import BackgroundImage from "📱/components/BackgroundImage/bg.svelte"
 import WindowPanel from "📱/components/Window/window.svelte"
 import { Icon } from "astro-icon/components"
-// # Astro
+// # 🚀 Astro
 import { ClientRouter } from "astro:transitions"
 import { Font } from "astro:assets"
+
+const { windowPanel }: { windowPanel?: { class?: string } } = Astro.props
 ---
 
 <html
-  data-theme="Orv Window"
+  data-theme="PumoReiichi"
   lang="en">
   <head>
     <meta charset="UTF-8" />
     <ClientRouter />
     <Font
-      cssVariable="--font-orvconfig"
+      cssVariable="--font-orv_window-config"
       preload
     />
     <slot name="seo">
@@ -29,41 +32,47 @@ import { Font } from "astro:assets"
     </slot>
   </head>
 
-  <body class="font-orv text-glow h-screen w-screen overflow-auto ">
-    <BackgroundImage client:only="svelte">
-      <main class="grid h-full place-content-center">
-        <WindowPanel client:only="svelte">
-          <slot />
-          <Fragment slot="controls">
-            <CaptionControls>
-              <Icon
-                name="minimize"
-                class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
-                slot="minimize"
-              />
-              <Icon
-                name="restore_down"
-                class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
-                slot="restore_down"
-              />
-              <Icon
-                name="close"
-                class="size-5 drop-shadow-[0_0_0.9px] drop-shadow-white"
-                slot="close"
-              />
-            </CaptionControls>
-          </Fragment>
-        </WindowPanel>
-      </main>
+  <body class="font-orv_window text-glow m-0 h-full w-full p-0">
+    <BackgroundImage />
+    <main class="relative flex h-screen items-center justify-center lg:mx-24">
+      <WindowPanel
+        className={windowPanel?.class}
+        client:load>
+        <slot />
+        <Fragment slot="controls">
+          <CaptionControls>
+            <Icon
+              name="minimize"
+              class="drop-shadow-secondary size-4 drop-shadow-[0_0_0.9px] md:size-5 lg:size-5"
+              slot="minimize"
+            />
+            <Icon
+              name="restore_down"
+              class="drop-shadow-secondary size-4 drop-shadow-[0_0_0.9px] md:size-5"
+              slot="restore_down"
+            />
+            <Icon
+              name="close"
+              class="drop-shadow-secondary size-4 drop-shadow-[0_0_0.9px] md:size-5 lg:size-5"
+              slot="close"
+            />
+          </CaptionControls>
+        </Fragment>
+      </WindowPanel>
+    </main>
 
-      <!-- Footer and other stuff -->
-      <div class="absolute right-1 bottom-1 portrait:left-1 portrait:top-1 text-right text-xs lg:text-sm portrait:rotate-90">
-        <span>[Version 1.0]</span>
-        <footer>
-          © {new Date().getFullYear()}
-          <a class="link" href="https://github.com/sillypnk/reiichi.ORV" target="_blank">PumoReichii™</a>. All Rights Reserved.
-        </footer>
-      </div>
-    </BackgroundImage>
+    <!--     <section class="absolute right-1 bottom-1 text-right text-xs lg:text-sm">
+      <span>[Version 1.0]</span>
+      <footer>
+        © {new Date().getFullYear()}
+        <a
+          class="link"
+          href="https://github.com/sillypnk/reiichi.ORV"
+          target="_blank">
+          PumoReichii™
+        </a>. All Rights Reserved.
+      </footer>
+    </section>
+ -->
   </body>
 </html>

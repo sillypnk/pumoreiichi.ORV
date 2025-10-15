@@ -7,6 +7,8 @@ import astroParser from "astro-eslint-parser"
 import svelte from "eslint-plugin-svelte"
 import svelteParser from "svelte-eslint-parser"
 
+import eslintPrettier from "eslint-plugin-prettier/recommended"
+
 import js from "@eslint/js"
 import ts from "typescript-eslint"
 
@@ -18,6 +20,7 @@ export default ts.config([
   ...ts.configs.recommendedTypeChecked,
   ...svelte.configs.recommended,
   ...astro.configs.recommended,
+  eslintPrettier,
   {
     extends: [ts.configs.disableTypeChecked],
   },

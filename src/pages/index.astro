@@ -1,53 +1,94 @@
 ---
 import ORVApp from "📱/layouts/App.astro"
 import StatsChart from "📱/components/Window/stats.svelte"
-import AvatarImage from "📱/assets/avatars/kdj.png"
-
-import { Image } from "astro:assets"
 import SEO from "📱/components/SEO/SEO.astro"
+
+import { Picture } from "astro:assets"
+import AvatarImage from "📱/assets/avatars/kdj.jpg"
 ---
 
-<ORVApp>
+<ORVApp
+  windowPanel={{
+    class:
+      "w-[18rem] h-[32rem] md:w-[25rem] md:h-[35rem] lg:h-[40rem] lg:w-[77rem]",
+  }}>
   <SEO
-    title="Main Window: Incarnation Details"
+    title="[Main Window]: Incarnation Details"
     slot="seo"
   />
 
-  <div class="flex w-full flex-row">
-    <!-- [[ INCARNATION DETAILS HEADER ]] -->
-    <div class="flex h-full flex-col pr-7">
+  <!-- NOTE: For medium & smaller devices -->
+  <section class="my-3 flex flex-col px-2 py-14 md:px-5 lg:hidden">
+    <h3 class="text-center text-2xl md:text-5xl">
+      &lt;INCARNATION DETAILS&gt;
+    </h3>
+
+    <ul class="mt-10 text-sm md:text-xl">
+      <li>NAME: <span class="ml-5">PumoReiichi</span></li>
+      <li>AGE: <span class="ml-5">18+</span></li>
+      <li>STATUS: <span class="ml-5">In Relationship</span></li>
+    </ul>
+
+    <hr
+      class="shadow-secondary inset-shadow-secondary mt-6 mb-7 shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+    />
+
+    <ul class="text-md md:text-xl">
+      <li>CONSTELLATION SPONSOR: <span class="ml-5">The Quiet Hare</span></li>
+      <li>
+        EXCLUSIVE ATTRIBUTES: <span class="ml-5">erm what the sigma?</span>
+      </li>
+      <li>ADDITIONAL NOTES: <span class="span ml-5">Nothing else.</span></li>
+    </ul>
+  </section>
+
+  <!-- NOTE: For larger screens only -->
+  <section class="hidden flex-row lg:flex">
+    <div
+      id="INCARNATION__HEADER"
+      class="flex flex-col pr-4">
       <div
-        class="mr-10 mb-6 ml-2 w-md bg-blue-400 py-4 inset-shadow-[10px_10px_40px_10px_var(--color-cyan-300)]"
-        style="--aug-border-all: 1px; --aug-tl: 2em;"
+        class="bg-base-300/70 mb-4 ml-2 w-md py-4 inset-shadow-[6px_6px_40px_1px_var(--color-secondary)]"
+        style="--aug-border-all: 1px; --aug-tl: 2.6em;"
         data-augmented-ui="tl-clip border">
-        <h1 class="text-center text-[40px] tracking-[0.100em]">
+        <h3 class="ml-5 text-center tracking-[0.100em] lg:text-[2.3em]">
           INCARNATION DETAILS
-        </h1>
+        </h3>
       </div>
 
-      <!-- -> [[ INCARNATION DETAILS ]]: NAME -->
-      <section class="ml-6 flex items-center gap-1">
-        <h3 class="text-2xl">NAME:</h3>
-        <div class="min-h-[33px] w-full max-w-[230px] rounded-none bg-blue-400">
+      <div class="ml-6 flex items-center gap-1">
+        <h3 class="text-xl">NAME:</h3>
+        <div
+          id="INCARNATION__NAME"
+          class="bg-base-200/70 h-[2.063rem] w-[230px] rounded-none">
           <span class="text-md mt-1.5 inline-block pl-2 text-center">
-            James Alvin Pendon
+            PumoReiichi
           </span>
         </div>
         <div
-          class="relative ml-10 h-full min-h-[33px] w-[100px] rounded-none bg-blue-400">
-          <span class="text-md mt-1.5 ml-2 inline-block text-center">
-            He/Him
-          </span>
-          <div
-            class="absolute right-0 inline-block h-full w-2 bg-blue-300 px-2.5">
+          id="INCARNATION__PRONOUNCIATION"
+          class="bg-base-200/70 relative ml-10 h-[2.063rem] w-[100px] rounded-none">
+          <div class="text-md mt-1.5 ml-2 inline-block text-center">He/Him</div>
+          <div class="bg-base-100 h-auto w-2 px-2.5">
             <span class="absolute right-1 bottom-0.5 text-xs">▼</span>
           </div>
+        </div>
+      </div>
+
+      <section class="mt-6 ml-6 flex">
+        <h3 class="mr-8 text-xl">STATUS:</h3>
+        <div
+          id="INCARNATION__STATUS"
+          class="bg-base-200/70 h-[2.063rem] w-[230px] rounded-none">
+          <span class="text-md mt-1.5 inline-block pl-2 text-center">
+            In Relationship
+          </span>
         </div>
       </section>
 
       <!-- -> [[ INCARNATION DETAILS ]]: AGE -->
       <section class="mt-6 ml-[40px] flex items-center">
-        <h3 class="mr-8 text-2xl">AGE:</h3>
+        <h3 class="mr-8 text-xl">AGE:</h3>
         <input
           type="checkbox"
           class="checkbox checkbox-xs border-base-content/70 shadow-base-content/50 inset-shadow-base-content/10 pointer-events-none rounded-none border shadow-[0_0_10px] inset-shadow-[0_0_10px]"
@@ -73,36 +114,31 @@ import SEO from "📱/components/SEO/SEO.astro"
         </span>
       </section>
 
-      <section class="mt-6 text-center">
-        <a
-          href="#about"
-          class="hover:link text-sm">
-          👤 Know more about me!
-        </a>
-      </section>
-
       <hr
-        class="shadow-base-content inset-shadow-base-content mt-7 mb-11 ml-6 w-[28rem] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+        class="shadow-base-content inset-shadow-base-content mt-7 mb-6 ml-6 w-[28rem] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
       />
 
-      <!-- -> [[ INCARNATION DETAILS ]]: CONSTELLATION SPONSOR -->
       <section
-        class="ml-6 grid grid-cols-[325px_117px] grid-rows-[34px_45px_95px_20px_auto]">
+        id="INCARNATION__CONSTELLATION-SPONSOR"
+        class="ml-6 grid grid-cols-[325px_117px] grid-rows-[2.125rem_2.813rem_5.938rem_1.12rem_auto]">
         <div class="col-start-1 row-end-2">
           <h3 class="mb-2 text-2xl">CONSTELLATION SPONSOR:</h3>
-          <div class="h-[33px] w-[295px] rounded-none bg-blue-400">
+          <div
+            class="bg-base-200/70 min-h-[2.063rem] max-w-[295px] rounded-none">
             <span class="ml-2 block pt-1">The Quiet Hare</span>
           </div>
         </div>
 
-        <!-- -> [[ INCARNATION DETAILS ]]: EXCLUSIVE ATTRIBUTES -->
         <div class="col-start-1 row-start-3">
           <h3 class="mb-2 text-2xl">EXCLUSIVE ATTRIBUTES:</h3>
           <div
-            class="relative block h-[55px] w-[295px] rounded-none bg-blue-400">
-            <div class="top-left-corner size-2"></div>
-            <div class="bottom-right-corner size-2"></div>
-            <span class="ml-2">None.</span>
+            class="bg-base-200/70 relative block min-h-[3.438rem] max-w-[295px] rounded-none px-2">
+            <div class="top-left-corner absolute size-2"></div>
+            <div class="bottom-right-corner absolute size-2"></div>
+            <p class="text-sm">
+              Sacrificial lamb's will (Lvl. 1), Sleepyness (Lvl. 10), Sneaky
+              one! (Lvl. ?)
+            </p>
           </div>
           <span class="-my-0.5 block cursor-pointer text-sm">
             [EXPAND LIST]
@@ -110,25 +146,25 @@ import SEO from "📱/components/SEO/SEO.astro"
         </div>
 
         <!-- -> [[ INCARNATION DETAILS ]]: ADDITIONAL NOTES -->
-        <span class="ml-0.5 place-content-end text-[12px]">
+        <span class="ml-0.5 place-content-end text-[0.75em]">
           ADDITIONAL NOTES:
         </span>
         <div class="col-start-2 row-start-2 row-end-4">
-          <div class="h-full w-full overflow-y-scroll bg-blue-400 p-1">
+          <div
+            class="no-scrollbar bg-base-200/70 h-full w-full overflow-y-scroll p-1">
             <span class="text-sm">
-              🌟 Is timid, very shy, quiet but sometimes talkative when with
-              friends :&gt; 🔴 Can be really negative about himself, you know
-              cause real-life stuff.
+              A very-lazy, quiet, timid young individual and an Adachi Rei |
+              Romance Manga | Frontend enthusiast
             </span>
           </div>
-          <div class="mb-5 cursor-pointer text-right text-[12px]">
+          <div class="mb-5 cursor-pointer text-right text-[0.75em]">
             [EXPAND LIST]
           </div>
         </div>
 
         <!-- -> [[ INCARNATION DETAILS ]]: I have no idea what this is -->
         <div class="col-start-1 col-end-3 row-start-5 row-end-6">
-          <div class="mt-9 flex flex-row gap-7 text-2xl">
+          <div class="mt-6 flex flex-row gap-7 text-2xl">
             <div>
               <input
                 type="checkbox"
@@ -156,7 +192,7 @@ import SEO from "📱/components/SEO/SEO.astro"
               <span class="cursor-pointer">
                 ON │ <span class="underline underline-offset-3">OFF</span>
               </span>
-              <div class="-mt-2 text-[12px]">(for no reason)</div>
+              <div class="-mt-2 text-[0.75em]">(for no reason)</div>
             </div>
           </div>
           <div class="-mt-2 text-xs">(I do not know any of these)</div>
@@ -164,34 +200,32 @@ import SEO from "📱/components/SEO/SEO.astro"
       </section>
     </div>
 
-    <!-- 2nd Page -->
-    <div class="w-full">
-      <!-- -> [[ INCARNATION DETAILS ]]: AVATAR -->
+    <!-- 2ND PAGE -->
+    <div class="relative w-full">
       <section
-        class="overflow-none relative min-h-[300px] max-w-[299px] bg-blue-400 inset-shadow-[10px_10px_55px_5px_var(--color-cyan-300)]">
-        <Image
-					class="opacity-70 h-full w-full object-cover absolute"
-					src={AvatarImage}
-					alt="Image Avatar"
-					slot="avatar"
-				/>
-        <!-- <div class="flex justify-center items-center h-full"> <span class="text-2xl">[NO IMAGE AVAILABLE]</span> </div> -->
+        class="overflow-none bg-base-200/70 relative h-[18.75rem] max-w-[299px] inset-shadow-[10px_10px_55px_5px_var(--color-cyan-300)]">
+        <Picture
+          formats={["webp", "avif"]}
+          class="absolute h-full w-full object-cover opacity-90"
+          src={AvatarImage}
+          alt="Image Avatar"
+          slot="avatar"
+        />
       </section>
       <span class="text-md block cursor-pointer">[EXPAND THUMBNAIL IMAGE]</span>
       <hr
-        class="shadow-base-content inset-shadow-base-content mt-2.5 mb-7 w-[60px] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+        class="shadow-secondary inset-shadow-secondary mt-2.5 mb-7 max-w-[60px] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
       />
 
-      <!-- -> [[ INCARNATION DETAILS ]]: RADAR CHART STATISTICS -->
-      <section class="absolute top-14 right-9 portrait:right-4">
-        <h2 class="text-3xl">STATS:</h2>
+      <section class="absolute top-4 right-10">
+        <h2 class="text-2xl">STATS:</h2>
         <hr
-          class="shadow-base-content inset-shadow-base-content mb-3 w-[1.6em] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+          class="shadow-base-content inset-shadow-base-content mb-3 max-w-[25.6px] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
         />
         <div class="relative">
           <div class="top-left-corner size-2"></div>
           <StatsChart client:only="svelte" />
-          <div class="-mt-6 mr-9 text-right text-sm underline">Laziness</div>
+          <div class="-mt-6 mr-9 text-right text-sm underline">Pessimism</div>
           <div class="bottom-right-corner size-2"></div>
         </div>
         <h4 class="text-md mt-1 cursor-pointer text-right">
@@ -199,11 +233,10 @@ import SEO from "📱/components/SEO/SEO.astro"
         </h4>
       </section>
 
-      <!-- -> [[ INCARNATION DETAILS ]]: COMPREHENSIVE EVALUATION -->
       <section>
         <h3 class="text-2xl">COMPREHENSIVE EVALUATION</h3>
         <hr
-          class="shadow-base-content inset-shadow-base-content mt-0.5 mb-5 w-[34px] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
+          class="shadow-base-content inset-shadow-base-content mt-0.5 mb-2 max-w-[34px] shadow-[0_0_10px] inset-shadow-[0_0_10px]"
         />
 
         <div class="text-md mb-4 flex flex-row items-center">
@@ -270,7 +303,7 @@ import SEO from "📱/components/SEO/SEO.astro"
             <div class="-mt-1 text-xs">(SHIPS, FAV TROPES, MISC)</div>
           </h4>
           <div
-            class="mb-4 h-full max-h-[38px] w-full max-w-[360px] overflow-auto rounded-none no-scrollbar bg-blue-400">
+            class="no-scrollbar bg-base-200/70 mb-4 min-h-[2.375rem] max-w-[360px] overflow-auto rounded-none">
             <p class="ml-1 whitespace-nowrap">
               |Cute|, |Wholesome|, |Reader X Author|, |Romance (Obviously)|,
               |Action|, |Isekai/Regression|, |Yuri/Gl|
@@ -283,7 +316,7 @@ import SEO from "📱/components/SEO/SEO.astro"
             <div class="-mt-1 text-xs">(UNLIKED TAGS)</div>
           </h4>
           <div
-            class="h-full max-h-[38px] w-full max-w-[361px] overflow-auto rounded-none no-scrollbar bg-blue-400">
+            class="no-scrollbar bg-base-200/70 min-h-[2.375rem] max-w-[361px] overflow-auto rounded-none">
             <p class="ml-1 whitespace-nowrap">
               |Self-hatred|, |Dumass MCs|, |not straightforward|,
               |Unpassionate|, |Hypocrite|
@@ -292,5 +325,5 @@ import SEO from "📱/components/SEO/SEO.astro"
         </div>
       </section>
     </div>
-  </div>
+  </section>
 </ORVApp>

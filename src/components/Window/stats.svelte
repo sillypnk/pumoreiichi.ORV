@@ -73,7 +73,7 @@
               color: "#f9fdfe",
               font: {
                 size: 15,
-                family: "ORV Font-30ccdf6cf58db256",
+                family: "ORV Window Font-f04d7af043647d5f",
               },
             },
           },
@@ -91,7 +91,7 @@
   })
 </script>
 
-<div class="size-[275px]">
+<div class="size-[18rem]">
   <canvas bind:this={stats}>
     Your browser does not support the <code>canvas</code>
     element! That sucks :(

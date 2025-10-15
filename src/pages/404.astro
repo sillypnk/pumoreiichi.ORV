@@ -4,19 +4,32 @@ import ORVApp from "📱/layouts/App.astro"
 import SEO from "📱/components/SEO/SEO.astro"
 ---
 
-<ORVApp>
+<ORVApp
+  windowPanel={{
+    class:
+      "w-[18rem] h-[32rem] md:w-[25rem] md:h-[35rem] lg:h-[38rem] lg:w-[32rem]",
+  }}>
   <SEO
     title="Stream Error: The stream couldn't be found!"
     slot="seo"
   />
 
   <!-- # Placeholder for now -->
-  <div class="mt-10 p-10">
-    <h2 class="text-center text-6xl portrait:text-4xl">&lt;404 SCENARIO&gt;</h2>
-    <div class="mt-10 flex flex-col text-2xl portrait:text-md">
+  <div class="mt-6 px-5 py-2 sm:p-10">
+    <h2 class="text-center text-lg md:text-4xl lg:text-6xl portrait:text-4xl">
+      &lt;404 SCENARIO&gt;
+    </h2>
+    <div
+      class="text-md portrait:text-md mt-10 flex flex-col md:text-xl lg:text-2xl">
       <span class="my-3">CATEGORY: ???</span>
       <span class="my-3">DIFFICULTY: ???</span>
-      <span class="my-3">CLEAR CONDITION: <a href="/">Go Back.</a></span>
+      <span class="my-3">
+        CLEAR CONDITION: <a
+          class="link"
+          href="/">
+          Go Back.
+        </a>
+      </span>
       <span class="my-3">TIME LIMIT: -</span>
       <span class="my-3">REWARD: -</span>
       <span class="my-3">PENALTY FOR FAILURE: -</span>
