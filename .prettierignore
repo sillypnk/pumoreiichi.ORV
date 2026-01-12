@@ -1,0 +1,9 @@
+/.github
+/.husky
+/public
+/node_modules
+/dist
+/.astro
+/.wrangler
+/.vscode
+package-lock.json

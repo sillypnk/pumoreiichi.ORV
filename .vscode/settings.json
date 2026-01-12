@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "dist": true,
+    ".git": true,
+    ".husky": false,
+    ".astro": true,
+    ".prettierignore": true,
+    ".wrangler": true,
+    "LICENSE": true
+ }
+}

@@ -1,16 +1,17 @@
 ---
-import { type Props as SEOProps, SEO as AstroSEO } from "astro-seo";
+import { type Props as SEOProps, SEO as AstroSEO } from "astro-seo"
 
-const { props } = Astro;
+const { props } = Astro
 
 const metaData = {
-  title: props.title ?? "Welcome!",
-  titleTemplate: props.titleTemplate ?? "Incarnation Pinkmin - %s",
+  title: props.title ?? "ORV System Window",
+  titleTemplate: props.titleTemplate ?? "<Star Stream> [%s]",
   description:
-    props.description ?? "📱📖 A portfolio inspired by the Omniscient Reader's Viewpoint's System Window.",
+    props.description ??
+    "📱📖 A portfolio inspired by the Omniscient Reader's Viewpoint's System Window.",
   // TODO: Add a default image
   image: props.imageUrl ?? `/src/assets/adachi-media/wallpaper.jpg`,
-};
+}
 
 const defaultProps: SEOProps = {
   extend: {
@@ -18,7 +19,7 @@ const defaultProps: SEOProps = {
       {
         name: "viewport",
         content: "width=device-width, initial-scale=1.0",
-      }
+      },
     ],
     link: [
       {
@@ -39,7 +40,7 @@ const defaultProps: SEOProps = {
       {
         rel: "manifest",
         href: "/pinkmin.webmanifest",
-      }
+      },
     ],
   },
   title: metaData.title,
@@ -62,9 +63,9 @@ const defaultProps: SEOProps = {
     image: metaData.image,
     imageAlt: metaData.title,
   },
-};
+}
 
-const combinedProps = { ...defaultProps, ...props };
+const combinedProps = { ...defaultProps, ...props }
 ---
 
 <AstroSEO {...combinedProps} />

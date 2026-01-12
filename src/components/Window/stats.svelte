@@ -1,49 +1,49 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import Chart, { type ChartItem, type Plugin } from "chart.js/auto";
+  import { onMount } from "svelte"
+  import Chart, { type ChartItem, type Plugin } from "chart.js/auto"
 
-  let stats: HTMLCanvasElement;
+  let stats: HTMLCanvasElement
   onMount(() => {
-    const ctx = stats.getContext("2d");
-    let textColor = "#f9fdfe";
+    const ctx = stats.getContext("2d")
+    let textColor = "#f9fdfe"
 
     // Line Gradient
-    let ctxGradient = ctx?.createLinearGradient(20, 220, 0, 95);
-    ctxGradient?.addColorStop(0, "rgba(83, 234, 253, 0.70)");
-    ctxGradient?.addColorStop(1, "rgba(43, 127, 255, 0.21)");
+    let ctxGradient = ctx?.createLinearGradient(20, 220, 0, 95)
+    ctxGradient?.addColorStop(0, "rgba(83, 234, 253, 0.70)")
+    ctxGradient?.addColorStop(1, "rgba(43, 127, 255, 0.21)")
     // Radar Background Gradient
-    let radarBackground = ctx?.createRadialGradient(120, 100, 150, 120, 250, 10);
-    radarBackground?.addColorStop(0, "rgba(83, 234, 253, 0)");
-    radarBackground?.addColorStop(1, "rgba(83, 234, 253, 0.5)");
+    let radarBackground = ctx?.createRadialGradient(120, 100, 150, 120, 250, 10)
+    radarBackground?.addColorStop(0, "rgba(83, 234, 253, 0)")
+    radarBackground?.addColorStop(1, "rgba(83, 234, 253, 0.5)")
     // Shadow
     let ctxShadow: Plugin<"radar"> = {
       id: "glowing-textawawawa",
       beforeDatasetsDraw: ({ ctx }) => {
-        ctx.shadowColor = "rgba(249, 253, 254, 0.5)";
-        ctx.shadowBlur = 10;
+        ctx.shadowColor = "rgba(249, 253, 254, 0.5)"
+        ctx.shadowBlur = 10
       },
-    };
+    }
 
     const chartData = {
       labels: ["STR", "STA", "SPECIAL STAT:", "MP", "AGI"],
       datasets: [
         // Setting up the border for the data
         {
-          data: [100, 100, 100, 100, 100],
+          data: [10, 10, 10, 10, 10],
           borderColor: textColor,
           backgroundColor: "transparent",
           borderWidth: 2,
           pointBackgroundColor: textColor,
         },
         {
-          data: [48, 56, 35, 30, 58],
+          data: [4.8, 5.6, 8.9, 3.0, 5.8],
           fill: true,
           pointBackgroundColor: textColor,
           backgroundColor: ctxGradient,
           borderColor: textColor,
         },
       ],
-    };
+    }
 
     new Chart(ctx as ChartItem, {
       data: chartData,
@@ -57,8 +57,8 @@
         scales: {
           r: {
             backgroundColor: radarBackground,
-            min: 0,
-            max: 100,
+            min: 0.5,
+            max: 10.0,
             angleLines: {
               color: textColor,
             },
@@ -67,13 +67,13 @@
             },
             ticks: {
               display: false,
-              stepSize: 25,
+              stepSize: 3.3,
             },
             pointLabels: {
               color: "#f9fdfe",
               font: {
                 size: 15,
-                family: "ORV Font-30ccdf6cf58db256",
+                family: "ORV Window Font-f04d7af043647d5f",
               },
             },
           },
@@ -87,12 +87,13 @@
           },
         },
       },
-    });
-  });
+    })
+  })
 </script>
 
-<div class="size-[275px]">
+<div class="size-[18rem]">
   <canvas bind:this={stats}>
-    Your browser does not support the <code>canvas</code> element! That sucks :(
+    Your browser does not support the <code>canvas</code>
+    element! That sucks :(
   </canvas>
 </div>
